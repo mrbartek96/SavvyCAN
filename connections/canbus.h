@@ -14,6 +14,11 @@ class CANBus
 
     friend QDataStream& operator<<(QDataStream & pStream, const CANBus& pCanBus);
     friend QDataStream& operator>>(QDataStream & pStream, CANBus& pCanBus);
+
+	bool canFDCapable;		// does this CANBUS support CANFD?
+	bool r120Switchable;	// does this CANBUS support programmable switching 120R termination resistor?
+	bool r120;				// doest 120R terminator is ON?
+
 public:
     CANBus();
 
@@ -32,6 +37,14 @@ public:
     bool isSingleWire() const;
     bool isActive() const;
     bool isCanFD() const;
+
+	void setCanFDCapable(bool val);
+	void setR120Swithcable(bool val);
+	void setR120(bool val);
+
+	bool isCanFDCapable(void) const;
+	bool isR120Switchable(void) const;
+	bool isR120On(void) const;
 };
 
 QDataStream& operator<<(QDataStream & pStream, const CANBus& pCanBus);

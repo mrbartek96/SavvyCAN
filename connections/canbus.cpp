@@ -47,6 +47,9 @@ void CANBus::setCanFD(bool mode){
     canFD = mode;
 }
 
+
+
+
 int CANBus::getSpeed() const {
     return speed;
 }
@@ -74,6 +77,27 @@ bool CANBus::isActive() const {
 
 bool CANBus::isCanFD() const {
     return canFD;
+}
+
+
+
+void CANBus::setCanFDCapable(bool val) {
+	canFDCapable = val;
+}
+void CANBus::setR120Swithcable(bool val) {
+	r120Switchable = val;
+}
+void CANBus::setR120(bool val) {
+	r120 = val;
+}
+bool CANBus::isCanFDCapable(void) {
+	return canFDCapable;
+}
+bool CANBus::isR120Switchable(void) {
+	return r120Switchable
+}
+bool CANBus::isR120On(void) {
+	return r120;
 }
 
 
